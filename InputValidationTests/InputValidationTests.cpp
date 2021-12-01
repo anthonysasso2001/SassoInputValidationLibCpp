@@ -18,56 +18,52 @@ namespace InputValidationTests
 	{
 	public:
 		
-		TEST_METHOD(F000_T000_wordStringNoCaps_isAlpha_returnTrue)
+		TEST_METHOD(F000_T000_abc_isAlpha_returnTrue)
 		{
 			//arrange
-			string testString = "lowercasestring";
-			InputValidation checker;
+			string testString = "abc";
 
 			//act
-			bool receivedReturn = checker.stringisAlpha(testString);
+			bool receivedBool = InputValidation::stringisAlpha(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is the string without capitals alphabetic
+			Assert::IsTrue(receivedBool);	//is the string without capitals alphabetic
 		}
 
-		TEST_METHOD(F000_T001_wordStringWithCaps_isAlpha_returnTrue)
+		TEST_METHOD(F000_T001_ABC_isAlpha_returnTrue)
 		{
 			//arrange
-			string testString = "UpperCaseString";
-			InputValidation checker;
+			string testString = "ABC";
 
 			//act
-			bool receivedReturn = checker.stringisAlpha(testString);
+			bool receivedBool = InputValidation::stringisAlpha(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string with capitals alphabetic
+			Assert::IsTrue(receivedBool);	//is a string with capitals alphabetic
 		}
 
-		TEST_METHOD(F000_T002_wordStringWithNum_isAlpha_returnFalse)
+		TEST_METHOD(F000_T002_Abc123_isAlpha_returnFalse)
 		{
 			//arrange
-			string testString = "stringWith1234";
-			InputValidation checker;
+			string testString = "Abc123";
 
 			//act
-			bool receivedReturn = checker.stringisAlpha(testString);
+			bool receivedBool = InputValidation::stringisAlpha(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with numbers alphabetic
+			Assert::IsFalse(receivedBool);	//is a string with numbers alphabetic
 		}
 
-		TEST_METHOD(F000_T003_wordStringWithSymbols_isAlpha_returnFalse)
+		TEST_METHOD(F000_T003_Abc123WSymbols_isAlpha_returnFalse)
 		{
 			//arrange
-			string testString = "stringWith!@#$";
-			InputValidation checker;
+			string testString = "Abc123!@#";
 
 			//act
-			bool receivedReturn = checker.stringisAlpha(testString);
+			bool receivedBool = InputValidation::stringisAlpha(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with symbols alphabetic
+			Assert::IsFalse(receivedBool);	//is a string with symbols alphabetic
 		}
 	};
 
@@ -79,52 +75,48 @@ namespace InputValidationTests
 		{
 			//arrange
 			string testString = "lowercasestring";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisAlphaNum(testString);
+			bool receivedBool = InputValidation::stringisAlphaNum(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string without capitals alphanumeric
+			Assert::IsTrue(receivedBool);	//is a string without capitals alphanumeric
 		}
 
 		TEST_METHOD(F001_T001_wordStringWithCaps_isAlphaNum_returnTrue)
 		{
 			//arrange
 			string testString = "UpperCaseString";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisAlphaNum(testString);
+			bool receivedBool = InputValidation::stringisAlphaNum(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string with capitals alphanumeric
+			Assert::IsTrue(receivedBool);	//is a string with capitals alphanumeric
 		}
 
 		TEST_METHOD(F001_T002_wordStringWithNum_isAlphaNum_returnTrue)
 		{
 			//arrange
 			string testString = "stringWith1234";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisAlphaNum(testString);
+			bool receivedBool = InputValidation::stringisAlphaNum(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string with numbers alphanumeric
+			Assert::IsTrue(receivedBool);	//is a string with numbers alphanumeric
 		}
 
 		TEST_METHOD(F001_T003_wordStringWithSymbols_isAlpha_returnFalse)
 		{
 			//arrange
 			string testString = "stringWith!@#$";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisAlphaNum(testString);
+			bool receivedBool = InputValidation::stringisAlphaNum(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with symbols alphanumeric
+			Assert::IsFalse(receivedBool);	//is a string with symbols alphanumeric
 		}
 	};
 
@@ -136,52 +128,48 @@ namespace InputValidationTests
 		{
 			//arrange
 			string testString = "stringOfWords";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDigit(testString);
+			bool receivedBool = InputValidation::stringisDigit(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with letters a digit
+			Assert::IsFalse(receivedBool);	//is a string with letters a digit
 		}
 
 		TEST_METHOD(F002_T002_numString_isDigit_returnTrue)
 		{
 			//arrange
 			string testString = "1234";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDigit(testString);
+			bool receivedBool = InputValidation::stringisDigit(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string with numbers a digit
+			Assert::IsTrue(receivedBool);	//is a string with numbers a digit
 		}
 
 		TEST_METHOD(F002_T003_numStringWithSymbols_isDigit_returnFalse)
 		{
 			//arrange
 			string testString = "1234!@#$";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDigit(testString);
+			bool receivedBool = InputValidation::stringisDigit(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with symbols a digit
+			Assert::IsFalse(receivedBool);	//is a string with symbols a digit
 		}
 
 		TEST_METHOD(F002_T004_numStringWithDot_isDigit_returnFalse)
 		{
 			//arrange
 			string testString = "1234.5678";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDigit(testString);
+			bool receivedBool = InputValidation::stringisDigit(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with numbers and a dot a digit
+			Assert::IsFalse(receivedBool);	//is a string with numbers and a dot a digit
 		}
 	};
 
@@ -193,374 +181,370 @@ namespace InputValidationTests
 		{
 			//arrange
 			string testString = "stringOfWords";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDecimal(testString);
+			bool receivedBool = InputValidation::stringisDecimal(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with words a decimal
+			Assert::IsFalse(receivedBool);	//is a string with words a decimal
 		}
 
 		TEST_METHOD(F003_T001_numString_isDecimal_returnTrue)
 		{
 			//arrange
 			string testString = "1234";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDecimal(testString);
+			bool receivedBool = InputValidation::stringisDecimal(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string with numbers a decimal
+			Assert::IsTrue(receivedBool);	//is a string with numbers a decimal
 		}
 
 		TEST_METHOD(F003_T002_numStringWithSymbols_isDecimal_returnFalse)
 		{
 			//arrange
 			string testString = "1234!@#$";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDecimal(testString);
+			bool receivedBool = InputValidation::stringisDecimal(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with symbols a decimal
+			Assert::IsFalse(receivedBool);	//is a string with symbols a decimal
 		}
 
 		TEST_METHOD(F003_T003_numStringWithDot_isDecimal_returnTrue)
 		{
 			//arrange
 			string testString = "1234!@#$";
-			InputValidation checker;
 
 			//act
-			bool receivedReturn = checker.stringisDecimal(testString);
+			bool receivedBool = InputValidation::stringisDecimal(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with numbers and a dot a decimal
+			Assert::IsFalse(receivedBool);	//is a string with numbers and a dot a decimal
 		}
 	};
 
-	TEST_CLASS(F003_IsYNTests)
+	TEST_CLASS(F004_IsYNTests)
 	{
 	public:
 
-		TEST_METHOD(F003_T000_wordString_isYN_returnFalse)
+		TEST_METHOD(F004_T000_wordString_isYN_returnNeg1)
 		{
 			//arrange
 			string testString = "stringOfWords";
-			InputValidation checker;
+			int expectedInt = -1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with words Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string with words Y/N
 		}
 
-		TEST_METHOD(F003_T001_numString_isYN_returnFalse)
+		TEST_METHOD(F004_T001_numString_isYN_returnNeg1)
 		{
 			//arrange
 			string testString = "1234";
-			InputValidation checker;
+			int expectedInt = -1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with numbers Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string with numbers Y/N
 		}
 
-		TEST_METHOD(F003_T002_stringOfy_isYN_returnTrue)
+		TEST_METHOD(F004_T002_stringOfy_isYN_return1)
 		{
 			//arrange
 			string testString = "y";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of y Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of y Y/N
 		}
 
-		TEST_METHOD(F003_T003_stringOfY_isYN_returnTrue)
+		TEST_METHOD(F004_T003_stringOfY_isYN_return1)
 		{
 			//arrange
 			string testString = "Y";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of Y Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of Y Y/N
 		}
 
-		TEST_METHOD(F003_T004_stringOfyes_isYN_returnTrue)
+		TEST_METHOD(F004_T004_stringOfyes_isYN_return1)
 		{
 			//arrange
 			string testString = "yes";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of yes Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of yes Y/N
 		}
 
-		TEST_METHOD(F003_T005_stringOfYes_isYN_returnTrue)
+		TEST_METHOD(F004_T005_stringOfYes_isYN_return1)
 		{
 			//arrange
 			string testString = "Yes";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of Yes Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of Yes Y/N
 		}
 
-		TEST_METHOD(F003_T006_stringOfYES_isYN_returnTrue)
+		TEST_METHOD(F004_T006_stringOfYES_isYN_return1)
 		{
 			//arrange
 			string testString = "YES";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of YES Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of YES Y/N
 		}
 
-		TEST_METHOD(F003_T007_stringOfn_isYN_returnTrue)
+		TEST_METHOD(F004_T007_stringOfn_isYN_return0)
 		{
 			//arrange
 			string testString = "n";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of n Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of n Y/N
 		}
 
-		TEST_METHOD(F003_T008_stringOfN_isYN_returnTrue)
+		TEST_METHOD(F004_T008_stringOfN_isYN_return0)
 		{
 			//arrange
 			string testString = "N";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of N Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of N Y/N
 		}
 
-		TEST_METHOD(F003_T009_stringOfno_isYN_returnTrue)
+		TEST_METHOD(F004_T009_stringOfno_isYN_return0)
 		{
 			//arrange
 			string testString = "no";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of no Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of no Y/N
 		}
 
-		TEST_METHOD(F003_T010_stringOfNo_isYN_returnTrue)
+		TEST_METHOD(F004_T010_stringOfNo_isYN_return0)
 		{
 			//arrange
 			string testString = "No";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of No Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of No Y/N
 		}
 
-		TEST_METHOD(F003_T011_stringOfNO_isYN_returnTrue)
+		TEST_METHOD(F004_T011_stringOfNO_isYN_return0)
 		{
 			//arrange
 			string testString = "NO";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisYN(testString);
+			int receivedInt = InputValidation::stringisYN(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of NO Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of NO Y/N
 		}
 	};
 
-	TEST_CLASS(F004_IsTFTests)
+	TEST_CLASS(F005_IsTFTests)
 	{
 	public:
 
-		TEST_METHOD(F004_T000_wordString_isTF_returnFalse)
+		TEST_METHOD(F005_T000_wordString_isTF_returnNeg1)
 		{
 			//arrange
 			string testString = "stringOfWords";
-			InputValidation checker;
+			int expectedInt = -1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with words T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string with words T/F
 		}
 
-		TEST_METHOD(F004_T001_numString_isTF_returnFalse)
+		TEST_METHOD(F005_T001_numString_isTF_returnNeg1)
 		{
 			//arrange
 			string testString = "1234";
-			InputValidation checker;
+			int expectedInt = -1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsFalse(receivedReturn);	//is a string with numbers T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string with numbers T/F
 		}
 
-		TEST_METHOD(F004_T002_stringOft_isTF_returnTrue)
+		TEST_METHOD(F005_T002_stringOft_isTF_return1)
 		{
 			//arrange
 			string testString = "t";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of t T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of t T/F
 		}
 
-		TEST_METHOD(F004_T003_stringOfT_isTF_returnTrue)
+		TEST_METHOD(F005_T003_stringOfT_isTF_return1)
 		{
 			//arrange
 			string testString = "T";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of T T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of T T/F
 		}
 
-		TEST_METHOD(F004_T004_stringOftrue_isTF_returnTrue)
+		TEST_METHOD(F005_T004_stringOftrue_isTF_return1)
 		{
 			//arrange
 			string testString = "true";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of true T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of true T/F
 		}
 
-		TEST_METHOD(F004_T005_stringOfTrue_isTF_returnTrue)
+		TEST_METHOD(F005_T005_stringOfTrue_isTF_return1)
 		{
 			//arrange
 			string testString = "True";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of True T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of True T/F
 		}
 
-		TEST_METHOD(F004_T006_stringOfTRUE_isTF_returnTrue)
+		TEST_METHOD(F005_T006_stringOfTRUE_isTF_return1)
 		{
 			//arrange
 			string testString = "TRUE";
-			InputValidation checker;
+			int expectedInt = 1;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of TRUE T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of TRUE T/F
 		}
 
-		TEST_METHOD(F004_T007_stringOff_isTF_returnTrue)
+		TEST_METHOD(F005_T007_stringOff_isTF_return0)
 		{
 			//arrange
 			string testString = "f";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of f T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of f T/F
 		}
 
-		TEST_METHOD(F004_T008_stringOfF_isTF_returnTrue)
+		TEST_METHOD(F005_T008_stringOfF_isTF_return0)
 		{
 			//arrange
 			string testString = "F";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of F T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of F T/F
 		}
 
-		TEST_METHOD(F004_T009_stringOffalse_isTF_returnTrue)
+		TEST_METHOD(F005_T009_stringOffalse_isTF_return0)
 		{
 			//arrange
 			string testString = "false";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of false T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of false T/F
 		}
 
-		TEST_METHOD(F004_T010_stringOfFalse_isTF_returnTrue)
+		TEST_METHOD(F005_T010_stringOfFalse_isTF_return0)
 		{
 			//arrange
 			string testString = "False";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of False Y/N
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of False Y/N
 		}
 
-		TEST_METHOD(F004_T011_stringOfFALSE_isTF_returnTrue)
+		TEST_METHOD(F005_T011_stringOfFALSE_isTF_return0)
 		{
 			//arrange
 			string testString = "FALSE";
-			InputValidation checker;
+			int expectedInt = 0;
 
 			//act
-			bool receivedReturn = checker.stringisTF(testString);
+			int receivedInt = InputValidation::stringisTF(testString);
 
 			//assert
-			Assert::IsTrue(receivedReturn);	//is a string of FALSE T/F
+			Assert::AreEqual(expectedInt, receivedInt);	//is a string of FALSE T/F
 		}
 	};
 }
