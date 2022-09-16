@@ -12,8 +12,7 @@
 #pragma once
 #include <iostream>
 
-namespace InputValidationLibCpp {
-	class InputValidation {
+class InputValidation {
 	public:
 		
 		//Standard versions of check functions with bools
@@ -120,4 +119,3 @@ namespace InputValidationLibCpp {
 
 		//No overloaded check for Generic user validations, as they already check length...
 	};
-}

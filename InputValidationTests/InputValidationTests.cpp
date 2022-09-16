@@ -2,7 +2,6 @@
 #include "CppUnitTest.h"
 #include "../InputValidationLibCpp/InputValidationLibCpp.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-using namespace InputValidationLibCpp;
 
 namespace InputValidationTests
 {
