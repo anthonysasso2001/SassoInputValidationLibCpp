@@ -14,8 +14,6 @@
 #include <iostream>
 #include <regex>
 
-namespace InputValidationLibCpp {
-
 	bool InputValidation::stringisAlpha(std::string inputString) {
 
 		std::regex regexAlpha("^[A-Za-z]*$");	//regex string we are checking
@@ -159,4 +157,3 @@ namespace InputValidationLibCpp {
 
 		return isYN;
 	}
-}

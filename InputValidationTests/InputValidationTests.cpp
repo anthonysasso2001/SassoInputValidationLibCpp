@@ -2,22 +2,21 @@
 #include "CppUnitTest.h"
 #include "../InputValidationLibCpp/InputValidationLibCpp.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-using namespace InputValidationLibCpp;
 
 namespace InputValidationTests
 {
 	/**
 	 * @brief Tests for InputValidation
-	 * 
+	 *
 	 * test classes split by each function in the format FX where FX is the function number
 	 * the test classes have test of the form TY_input_operation/output_expected where TY is the test number per function
-	 * 
-	*/
+	 *
+	 */
 
 	TEST_CLASS(F000_IsAlphaTests)
 	{
 	public:
-		
+
 		TEST_METHOD(F000_T000_abc_isAlpha_returnTrue)
 		{
 			//arrange
@@ -555,7 +554,6 @@ namespace InputValidationTests
 			Assert::IsFalse(receivedBool);	//is a string with too many numbers valid
 		}
 	};
-
 
 	TEST_CLASS(F008_IsYNTests)
 	{
